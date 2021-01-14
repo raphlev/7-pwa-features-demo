@@ -3,7 +3,13 @@ button.addEventListener('click', (event) => connectBluetooth());
 
 async function connectBluetooth() {
 
-    // Connect Device
+    // connect my bluetooth audio device name = JBL Flip 4
+    //const devicebt = await navigator.bluetooth.requestDevice({ acceptAllDevices: true });
+    //const devicebt = await navigator.bluetooth.requestDevice({ filters: [{ name: ['JBL Flip 4'] }] });
+    //const serverbt = await devicebt.gatt.connect();
+    //console.log(devicebt.name);
+
+    // Connect heart_rate type of Device 
     const device = await navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] });
     const server = await device.gatt.connect();
 
